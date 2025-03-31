@@ -55,3 +55,18 @@ func (a *App) ReadMonitors() string {
 	}
 	return string(res)
 }
+
+func (a *App) WriteMonitorConfig(content string) string {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return "Failed to get home directory: " + err.Error()
+	}
+
+	path := home + "/.config/hypr/monitors.conf"
+	err = os.WriteFile(path, []byte(content), 0644)
+	if err != nil {
+		return "Failed to write file: " + err.Error()
+	}
+
+	return "Success"
+}

@@ -13,3 +13,7 @@ export function Greet(arg1) {
 export function ReadMonitors() {
   return window['go']['main']['App']['ReadMonitors']();
 }
+
+export function WriteMonitorConfig(arg1) {
+  return window['go']['main']['App']['WriteMonitorConfig'](arg1);
+}

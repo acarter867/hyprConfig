@@ -6,3 +6,5 @@ export function GetMonitorsJSON():Promise<string>;
 export function Greet(arg1:string):Promise<string>;
 
 export function ReadMonitors():Promise<string>;
+
+export function WriteMonitorConfig(arg1:string):Promise<string>;
